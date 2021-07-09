@@ -1,7 +1,7 @@
 import React from "react";
 
 function App() {
-  const name = "React";
+  const name = "JavaScript";
   return (
     <div>
       {name === "React" ? <h1>리액트입니다.</h1> : <h2>리액트가 아닙니다.</h2>}
