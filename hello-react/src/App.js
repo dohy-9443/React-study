@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   const name = undefined;
-  return name;
+  return name || "값이 undefined이다.";
 }
 
 export default App;
