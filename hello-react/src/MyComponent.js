@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 class MyComponent extends Component {
+  // defaultProps 값 설정하기
+  static defaultProps = {
+    name: "기본 이름",
+  };
+  // propTypes 를 통한 props 검증
+  static propTypes = {
+    name: PropTypes.string,
+    favoriteNumber: PropTypes.number.isRequired,
+  };
   render() {
     const { name, favoriteNumber, children } = this.props; // 비구조화 할당
     return (
@@ -13,16 +22,5 @@ class MyComponent extends Component {
     );
   }
 }
-
-// defaultProps 값 설정하기
-MyComponent.defaultProps = {
-  name: "기본 이름",
-};
-
-// propTypes 를 통한 props 검증
-MyComponent.propTypes = {
-  name: PropTypes.string,
-  favoriteNumber: PropTypes.number.isRequired,
-};
 
 export default MyComponent;
