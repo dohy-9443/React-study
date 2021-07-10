@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const MyComponent = ({ name, children }) => {
   return (
@@ -12,6 +13,11 @@ const MyComponent = ({ name, children }) => {
 // defaultProps 값 설정하기
 MyComponent.defaultProps = {
   name: "기본 이름",
+};
+
+// propTypes 를 통한 props 검증
+MyComponent.propTypes = {
+  name: PropTypes.string,
 };
 
 export default MyComponent;
