@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./VaildationSample.css";
+import "./ValidationSample.css";
 
-class VaildationSample extends Component {
+class ValidationSample extends Component {
   state = {
     password: "",
     clicked: false,
@@ -50,4 +50,4 @@ class VaildationSample extends Component {
   }
 }
 
-export default VaildationSample;
+export default ValidationSample;
