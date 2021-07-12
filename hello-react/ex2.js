@@ -1,4 +1,6 @@
-const numbers = [1, 2, 3, 4, 5];
-const processed = numbers.map((num) => num * num);
+const numbers = [1, 2, 3, 4, 5, 6];
+const withoutThree = numbers.filter((number) => number !== 3);
 
-console.log(processed);
+console.log(withoutThree);
+
+// [ 1, 2, 4, 5, 6 ]
