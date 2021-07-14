@@ -1,18 +1,15 @@
-import React, { Component } from "react";
+import React, { useRef } from "react";
 
-class myComponent extends Component {
-  id = 1;
-  setId = (n) => {
-    this.id = n;
+const RefSample = () => {
+  const id = useRef(1);
+  const setId = (n) => {
+    id.current = n;
+  };
+  const printId = () => {
+    console.log(id.current);
   };
 
-  printId = () => {
-    console.log(this.id);
-  };
+  return <div>refsample</div>;
+};
 
-  render() {
-    return <div>MyComponent</div>;
-  }
-}
-
-export default myComponent;
+export default RefSample;
