@@ -5,8 +5,8 @@ const Info = () => {
   const [nickname, setNickname] = useState("");
 
   useEffect(() => {
-    console.log("마운트될 때만 실행된다.");
-  }, []);
+    console.log("이름: ", name);
+  }, [name]);
 
   const onChangeName = (e) => {
     setName(e.target.value);
