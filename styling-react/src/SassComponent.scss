@@ -2,6 +2,10 @@
 
 .SassComponent {
   display: flex;
+  background-color: $oc-gray-2;
+  @include media('<768px') {
+    background-color: $oc-gray-9;
+  }
   .box { // 일반 CSS에서는 .SassComponent .box와 마찬가지
     background-color: red;
     cursor: pointer;
