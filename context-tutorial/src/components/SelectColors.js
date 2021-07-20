@@ -5,6 +5,14 @@ const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 
 class SelectColors extends Component {
   static contextType = ColorContext;
+
+  handleSetColor = (color) => {
+    this.context.actions.setColor(color);
+  };
+  handleSetSubcolor = (subcolor) => {
+    this.context.actions.setSubColor(subcolor);
+  };
+
   render() {
     return (
       <div>
@@ -18,6 +26,11 @@ class SelectColors extends Component {
                 width: 24,
                 height: 24,
                 cursor: "pointer",
+              }}
+              onClick={() => this.handleSetColor(color)}
+              onContextMenu={(e) => {
+                e.preventDefault();
+                this.handleSetSubcolor(color);
               }}
             />
           ))}
