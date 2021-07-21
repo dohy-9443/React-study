@@ -956,7 +956,7 @@ function reducer() {
       });
 
     default:
-      return false;
+      return state;
   }
 }
 
@@ -977,7 +977,19 @@ var render = function render() {
 };
 
 render();
-store.subscribe(render);
+store.subscribe(render); // 액션 발생 시키기
+
+divToggle.onclick = function () {
+  store.dispatch(toggleSwitch());
+};
+
+btnIncrease.onclick = function () {
+  store.dispatch(increase(1));
+};
+
+btnDecrease.onclick = function () {
+  store.dispatch(decrease());
+};
 },{"redux":"node_modules/redux/es/redux.js"}],"../../../../AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

@@ -41,7 +41,7 @@ function reducer(state = initialState, action) {
         counter: state.counter - 1,
       };
     default:
-      return false;
+      return state;
   }
 }
 
@@ -62,3 +62,14 @@ const render = () => {
 
 render();
 store.subscribe(render);
+
+// 액션 발생 시키기
+divToggle.onclick = () => {
+  store.dispatch(toggleSwitch());
+};
+btnIncrease.onclick = () => {
+  store.dispatch(increase(1));
+};
+btnDecrease.onclick = () => {
+  store.dispatch(decrease());
+};
