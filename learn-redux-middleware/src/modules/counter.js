@@ -25,10 +25,10 @@ function* decreaseSaga() {
 
 export function* counterSaga() {
   // takeEvery는 들어오는 모든 액션에 대해 특정 작업을 처리해준다.
-  yield takeEvery(INCREMENT_ASYNC, increaseAsync);
+  yield takeEvery(INCREMENT_ASYNC, increaseSaga);
   // takeLatest는 기존에 진행 중이던 작업이 있다면 취소 처리하고
   // 가장 마지막으로 실행된 작업만 수행한다.
-  yield takeLatest(DECREMENT_ASYNC, decreaseAsync);
+  yield takeLatest(DECREMENT_ASYNC, decreaseSaga);
 }
 
 const initialState = 0; // 상태는 꼭 객체일 필요가 없다. 숫자도 작동
