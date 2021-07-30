@@ -56,7 +56,6 @@ export function* usersSaga() {
 
 const initialState = {
   users: null,
-  user: null,
   loading: {
     users: false,
     user: false,
@@ -70,7 +69,11 @@ const initialState = {
 function users(state = initialState, action) {
   switch (action.type) {
     case GET_USERS_PENDING:
-      return { ...state, loading: { ...state.loading, users: true } };
+      return {
+        ...state,
+        loading: { ...state.loading, users: true },
+        error: { ...state.error, users: null },
+      };
     case GET_USERS_SUCCESS:
       return {
         ...state,
