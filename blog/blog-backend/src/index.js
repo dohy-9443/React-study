@@ -8,7 +8,9 @@ app.use((ctx, next) => {
     ctx.state = 401; // Unauthorized
     return;
   }
-  next();
+  next().then(() => {
+    console.log('END');
+  });
 });
 
 app.use((ctx, next) => {
