@@ -28,7 +28,7 @@ export default function createFakeData() {
       languages have very different syntax, semantics, and use.`,
     tags: ['가짜', '데이터'],
   }));
-  Post.insetmany(posts, (err, docs) => {
+  Post.insertMany(posts, (err, docs) => {
     console.log(docs);
   });
 }
