@@ -12,6 +12,6 @@ post.get('/:id', postsCtrl.read);
 post.delete('/:id', checkLoggedIn, postsCtrl.remove);
 post.patch('/:id', checkLoggedIn, postsCtrl.update);
 
-posts.use('/:id', postsCtrl.checkObjectId, post.routes());
+posts.use('/:id', postsCtrl.getPostId, post.routes());
 
 export default posts;
