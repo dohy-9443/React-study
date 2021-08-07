@@ -113,6 +113,12 @@ export const check = async (ctx) => {
   ctx.body = user;
 };
 
-export const logout = async (stc) => {
-  // 로그아웃
+/*
+  POST /api/auth/logout
+*/
+
+// 로그아웃
+export const logout = async (ctx) => {
+  ctx.cookies.set('access_token');
+  ctx.status = 204; // No Content
 };
