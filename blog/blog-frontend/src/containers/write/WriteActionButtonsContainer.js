@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import WriteActionButtons from "../../components/write/WriteActionButtons";
-import { useSelector, useDispatch } from "react-redux";
-import { withRouter } from "react-router-dom";
-import { writePost } from "../../modules/write";
+import React, { useEffect } from 'react';
+import WriteActionButtons from '../../components/write/WriteActionButtons';
+import { useSelector, useDispatch } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { writePost } from '../../modules/write';
 
 const WriteActionButtonsContainer = ({ history }) => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const WriteActionButtonsContainer = ({ history }) => {
     history.goBack();
   };
 
-  // 성공 혹은 실패 시 할 작업
+  // 성공 혹은 실패시 할 작업
   useEffect(() => {
     if (post) {
       const { _id, user } = post;
@@ -40,8 +40,7 @@ const WriteActionButtonsContainer = ({ history }) => {
       console.log(postError);
     }
   }, [history, post, postError]);
-
   return <WriteActionButtons onPublish={onPublish} onCancel={onCancel} />;
-}
+};
 
 export default withRouter(WriteActionButtonsContainer);

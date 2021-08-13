@@ -11,7 +11,7 @@ const WritePage = () => {
       <TagBoxContainer />
       <WriteActionButtonsContainer />
     </Responsive>
-  )
+  );
 };
 
 export default WritePage;
