@@ -18,15 +18,16 @@ const WriteActionButtonsContainer = ({ history }) => {
   // 포스트 등록
   const onPublish = () => {
     if (originalPostId) {
-      dispatch(
-        writePost({
-          title,
-          body,
-          tags,
-        }),
-      );
+      dispatch(updatePost({ title, body, tags, id: originalPostId }));
       return;
     }
+    dispatch(
+      writePost({
+        title,
+        body,
+        tags,
+      }),
+    );
   };
 
   // 취소
